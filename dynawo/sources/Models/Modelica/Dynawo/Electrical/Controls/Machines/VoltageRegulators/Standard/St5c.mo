@@ -62,7 +62,7 @@ model St5c "IEEE excitation system type ST5C model"
 
   Modelica.Blocks.Continuous.FirstOrder firstOrder(T = tR, y_start = Us0Pu) annotation(
     Placement(visible = true, transformation(origin = {-370, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction(a = {tB2, 1}, b = {tC2, 1}, x_scaled(start = {Vr0Pu}), x_start = {Vr0Pu}, y(start = Vr0Pu)) annotation(
+  Dynawo.NonElectrical.Blocks.Continuous.TransferFunction transferFunction(a = {tB2, 1}, b = {tC2, 1}, x_start = {Vr0Pu}, y_start = Vr0Pu) annotation(
     Placement(visible = true, transformation(origin = {10, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain(k = Kc) annotation(
     Placement(visible = true, transformation(origin = {230, 200}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -94,9 +94,9 @@ model St5c "IEEE excitation system type ST5C model"
     Placement(visible = true, transformation(origin = {50, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Dynawo.NonElectrical.Blocks.NonLinear.LimitedLeadLag limitedLeadLag1(t1 = tUC1, t2 = tUB1, Y0 = Vr0Pu, YMax = VrMaxPu, YMin = VrMinPu) annotation(
     Placement(visible = true, transformation(origin = {50, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction1(a = {tUB2, 1}, b = {tUC2, 1}, x_scaled(start = {Vr0Pu}), x_start = {Vr0Pu}, y(start = Vr0Pu)) annotation(
+  Dynawo.NonElectrical.Blocks.Continuous.TransferFunction transferFunction1(a = {tUB2, 1}, b = {tUC2, 1}, x_start = {Vr0Pu}, y_start = Vr0Pu) annotation(
     Placement(visible = true, transformation(origin = {10, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction2(a = {tOB2, 1}, b = {tOC2, 1}, x_scaled(start = {Vr0Pu}), x_start = {Vr0Pu}, y(start = Vr0Pu)) annotation(
+  Dynawo.NonElectrical.Blocks.Continuous.TransferFunction transferFunction2(a = {tOB2, 1}, b = {tOC2, 1}, x_start = {Vr0Pu}, y_start = Vr0Pu) annotation(
     Placement(visible = true, transformation(origin = {10, -80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Dynawo.NonElectrical.Blocks.NonLinear.LimitedLeadLag limitedLeadLag2(t1 = tOC1, t2 = tOB1, Y0 = Vr0Pu, YMax = VrMaxPu, YMin = VrMinPu) annotation(
     Placement(visible = true, transformation(origin = {50, -80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
