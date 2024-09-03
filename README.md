@@ -279,18 +279,18 @@ Open `x64 Native Tools Command Prompt for VS2019` and run the following commands
 ``` batch
 > git config --global core.eol lf
 > git config --global core.autocrlf input
-> set OPENMODELICAHOME=
-> set OPENMODELICALIBRARY=
 > md dynawo-project && cd dynawo-project
-> git clone https://github.com/dynawo/dynawo.git dynawo
+> git clone https://github.com/dynawo/dynawo.git
 > cd dynawo
-> cmake -S dynawo/3rdParty -B b-3-p -DCMAKE_INSTALL_PREFIX=../d-3-p -DOPENMODELICA_INSTALL=../OpenModelica/Install -DOPENMODELICA_SRC=../OpenModelica/Source -DOMDEV_HOME=../OMDev -G "NMake Makefiles"
-> cmake --build b-3-p
-> cmake -S dynawo -B b -DCMAKE_INSTALL_PREFIX=../d-i -DDYNAWO_HOME=.. -DINSTALL_OPENMODELICA=../../OpenModelica/Install -DDYNAWO_THIRD_PARTY_DIR=../../d-3-p -G "NMake Makefiles
-> cmake --build b --target install
-> cmake --build b --target models
-> cmake --build b --target solvers
+> util\windows\dynawo.cmd build
 ```
+**Tip** If you already installed OpenModelica, it is possible to set the following environment variables to use the existing OpenModelica installation and avoid recompiling OpenModelica again :
+``` batch
+> set OPENMODELICA_INSTALL=PATH_TO_OPENMODELICA_INSTALL
+> set OPENMODELICA_SRC=PATH_TO_OPENMODELICA_SRC
+> set OMDEV_HOME=PATH_TO_OMDEV
+```
+
 
 **Warning** We try to limit as far as possible the name of the build and install folders (for example d-i instead of dynawo-install or b-3-p for build-3rd-parties) because of Windows limitation of length of path for folders. We know it causes problems and the only solution is to install Dyna&omega;o in a shorter length directory path.
 
