@@ -83,7 +83,8 @@ $> ./dynawo.sh jobs --help
 Download the zip of the distribution and unzip it somewhere. Then open either \textbf{Command Prompt} or \textbf{x64 Native Tools Command Prompt for VS2019} (to be able to use your own models) and use \lstinline[language=bash]{cd} to go into the directory you previously unzipped. You should see a \textbf{dynawo.cmd} file at the top of the folder. You can then launch a simulation with:
 
 \begin{lstlisting}[language=bash, breaklines=true, breakatwhitespace=false]
-> dynawo --jobs-file testcases\IEEE14\IEEE14_BasicTestCases\IEEE14_LoadVariation\IEEE14.jobs
+> dynawo jobs sources\examples\DynaWaltz\IEEE14\IEEE14_GeneratorDisconnections\IEEE14.jobs
+> dynawo jobs-with-curves sources\examples\DynaWaltz\IEEE14\IEEE14_GeneratorDisconnections\IEEE14.jobs
 \end{lstlisting}
 
 \section{Building requirements}
