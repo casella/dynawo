@@ -194,7 +194,7 @@ In the following we give a list of requirements needed to build Dyna&omega;o and
 <a name="requirements_windows"></a>
 #### Windows
 
-- [Visual Studio 2019](https://visualstudio.microsoft.com/), Visual Studio 2015 was also tested
+- [Visual Studio 2019](https://visualstudio.microsoft.com/), Visual Studio 2015 and 2017 were also tested
 - [CMake](https://cmake.org/)
 - Java ([openjdk](https://openjdk.java.net/) for example) to build OpenModelica Compiler
 - [Python2](https://www.python.org/ftp/python/2.7.18/python-2.7.18.amd64.msi) or [Python3](https://www.python.org/ftp/python/3.8.2/python-3.8.2-amd64.exe)
