@@ -284,7 +284,7 @@ Open `x64 Native Tools Command Prompt for VS2019` and run the following commands
 > cd dynawo
 > util\windows\dynawo.cmd build
 ```
-**Tip** If you already installed OpenModelica, it is possible to set the following environment variables to use the existing OpenModelica installation and avoid recompiling OpenModelica again :
+**Tip** If you have already OpenModelica installed in another Dynawo workspace, it is possible to set the following environment variables to use the existing OpenModelica installation and avoid recompiling OpenModelica again :
 ``` batch
 > set OPENMODELICA_INSTALL=PATH_TO_OPENMODELICA_INSTALL
 > set OPENMODELICA_SRC=PATH_TO_OPENMODELICA_SRC
