@@ -13,6 +13,29 @@
 
 setlocal enableDelayedExpansion
 
+if /i "%~1"=="VERBOSE" (
+  set _verbose=true
+)
+
+if not defined DYNAWO_HOME (
+  if exist "%~dp0..\..\util\windows\%~nx0" (
+    set DYNAWO_HOME=%~dp0..\..
+  ) else (
+    if exist "%~dp0..\dynawo\util\windows\%~nx0" (
+      set DYNAWO_HOME=%~dp0..\dynawo
+    ) else (
+      if exist "%~dp0..\..\dynawo\util\windows\%~nx0" (
+        set DYNAWO_HOME=%~dp0..\..\dynawo
+      )
+    )
+  )
+)
+for %%G in ("%DYNAWO_HOME%") do set DYNAWO_HOME=%%~fG
+if defined _verbose echo info: using DYNAWO_HOME=%DYNAWO_HOME% 1>&2
+
+endlocal
+exit /B 1
+
 set DYNAWO_INSTALL_DIR=%~DP0
 
 :: Dynawo environment variables for runtime
@@ -36,8 +59,6 @@ if not defined DYNAWO_PYTHON_COMMAND (
 )
 
 if not defined DYNAWO_BROWSER (
-  setlocal
-
   :: setup a default browser in case we fail
   set default_browser=C:\Program Files\Internet Explorer\iexplore.exe
 
@@ -123,8 +144,6 @@ PATH=%oldpath%
 
 exit /B %ERRORLEVEL%
 
-setlocal
-
 :dynawo_help
 echo Usage: %~n0 ^<option^>
 echo.
@@ -136,5 +155,3 @@ echo     generate-preassembled ^<options^>  generate a preassembled model (.dll)
 echo     version                          show dynawo version
 echo     help                             show this message
 exit /B 0
-
-endlocal
