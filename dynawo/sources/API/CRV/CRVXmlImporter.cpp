@@ -30,7 +30,7 @@
 #include "DYNExecUtils.h"
 
 using std::string;
-using boost::shared_ptr;
+using std::shared_ptr;
 namespace parser = xml::sax::parser;
 namespace curves {
 
@@ -47,7 +47,7 @@ XmlImporter::importFromFile(const string& fileName) const {
   }
 }
 
-boost::shared_ptr<CurvesCollection>
+std::shared_ptr<CurvesCollection>
 XmlImporter::importFromStream(std::istream& stream) const {
   XmlHandler curvesHandler;
 

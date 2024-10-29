@@ -988,7 +988,7 @@ SubModel::getY0Values(vector<double>& y0, vector<double>& yp0, vector<double>& z
 }
 
 void
-SubModel::addCurve(shared_ptr<curves::Curve>& curve) {
+SubModel::addCurve(std::shared_ptr<curves::Curve>& curve) {
   const string variableName = curve->getFoundVariableName();
   const shared_ptr <Variable> variable = getVariable(variableName);
   const int varNum = variable->getIndex();
@@ -1030,7 +1030,7 @@ SubModel::addCurve(shared_ptr<curves::Curve>& curve) {
 }
 
 void
-SubModel::updateCalculatedVarForCurve(shared_ptr<curves::Curve>& curve) {
+SubModel::updateCalculatedVarForCurve(std::shared_ptr<curves::Curve>& curve) {
 #if defined(_DEBUG_) || defined(PRINT_TIMERS)
   Timer timer("SubModel::updateCalculatedVarForCurve");
   assert(curve);
@@ -1046,7 +1046,7 @@ SubModel::updateCalculatedVarForCurve(shared_ptr<curves::Curve>& curve) {
 }
 
 void
-SubModel::addParameterCurve(shared_ptr<curves::Curve>& curve) {
+SubModel::addParameterCurve(std::shared_ptr<curves::Curve>& curve) {
   curve->setBuffer(NULL);
   curve->setNegated(false);
 }
